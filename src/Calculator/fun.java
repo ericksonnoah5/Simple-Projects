@@ -25,6 +25,7 @@ public class fun implements ActionListener{
 	private JTextField myjoketext;
 	private JButton button;
 	
+	
 	fun(){
 		frame = new JFrame("Fun");
 		frame.setLayout(null);
