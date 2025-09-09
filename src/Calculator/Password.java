@@ -12,24 +12,20 @@ import javax.swing.JTextField;
 
 public class Password implements ActionListener{
 
-	JTextField uText;
-	JTextField pText;
-	public JFrame frame;
+	JFrame frame;
+	JTextField uText, pText;
+	JButton enterBut;
+	JLabel header, errorMsg;
 	Font font;
-	JButton eBut;
-	JLabel head, eMsg;
-	JFrame newframe;
-	public boolean access;
 	
-	public Password() {
+	Password() {
+		frame = new JFrame("Password");
 		pText = new JTextField();
 		uText = new JTextField();
+		enterBut = new JButton("Enter");
+		header = new JLabel("Enter a Username and Password");
+		errorMsg = new JLabel("Error Incorrect Username or Password");
 		font = new Font("Serif", Font.BOLD, 18);
-		frame = new JFrame("Password");
-		eBut = new JButton("Enter");
-		head = new JLabel("Enter a Username and Password");
-		eMsg = new JLabel("Error Incorrect Username or Password");
-		
 		
 		frame.setResizable(false);
 		frame.setLayout(null);
@@ -37,73 +33,38 @@ public class Password implements ActionListener{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		pText.setBounds(75, 150, 300, 50);
-		uText.setBounds(75, 250, 300, 50);
 		pText.setFont(font);
 		uText.setFont(font);
+		uText.setBounds(75, 250, 300, 50);
 		
-		eBut.setFont(font);
-		eBut.setBounds(75,325,100,40);
-		eBut.addActionListener(this);
+		enterBut.setFont(font);
+		enterBut.setBounds(75,325,100,40);
+		enterBut.addActionListener(this);
 		
-		head.setFont(font);
-		head.setBounds(75,100,500,40);
+		header.setFont(font);
+		header.setBounds(75,100,500,40);
 		
-		eMsg.setFont(font);
-		eMsg.setBounds(75,2000,500,40);
+		errorMsg.setFont(font);
+		errorMsg.setBounds(75,2000,500,40);
 		
-		
-		frame.add(eMsg);
-		frame.add(head);
-		frame.add(eBut);
+		frame.add(errorMsg);
+		frame.add(header);
+		frame.add(enterBut);
 		frame.add(pText);
 		frame.add(uText);
 		frame.setVisible(true);
-		
-		
-	}
-	public boolean getAccess() {
-		return access;
 	}
 	
-	public void setAccess(boolean bool) {
-		
-		access=bool;
-		
-	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource().equals(eBut)) {
-			
-			if(pText.getText().equals("123")&&(uText.getText().equals("123"))) {
-				eMsg.setBounds(75,2000,500,40);
-				access=true;
+		if(e.getSource().equals(enterBut)) {
+			if(pText.getText().equals("123") && (uText.getText().equals("123"))) {
 				frame.dispose();
 				new Calculator();
-				
 			}
 			else {
-				eMsg.setBounds(75,425,500,40);
+				errorMsg.setBounds(75,375,500,40);
 			}
 		}
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
-
 }
