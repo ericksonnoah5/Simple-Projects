@@ -31,22 +31,22 @@ public class Password implements ActionListener{
 		eMsg = new JLabel("Error Incorrect Username or Password");
 		
 		
-		
+		frame.setResizable(false);
 		frame.setLayout(null);
-		frame.setBounds(650, 150, 500, 750);
+		frame.setBounds(650, 150, 500, 550);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		pText.setBounds(75, 200, 300, 50);
-		uText.setBounds(75, 300, 300, 50);
+		pText.setBounds(75, 150, 300, 50);
+		uText.setBounds(75, 250, 300, 50);
 		pText.setFont(font);
 		uText.setFont(font);
 		
 		eBut.setFont(font);
-		eBut.setBounds(75,375,100,40);
+		eBut.setBounds(75,325,100,40);
 		eBut.addActionListener(this);
 		
 		head.setFont(font);
-		head.setBounds(75,150,500,40);
+		head.setBounds(75,100,500,40);
 		
 		eMsg.setFont(font);
 		eMsg.setBounds(75,2000,500,40);

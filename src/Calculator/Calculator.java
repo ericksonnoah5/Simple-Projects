@@ -30,7 +30,7 @@ public class Calculator implements ActionListener{
 		
 		window = new JFrame("Calculator");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setBounds(0, 0, 420,550);
+		window.setBounds(650, 100, 420,550);
 		
 		window.setResizable(false);
 		window.setLayout(null);
