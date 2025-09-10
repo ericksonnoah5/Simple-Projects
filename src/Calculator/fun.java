@@ -1,5 +1,6 @@
 package Calculator;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -9,7 +10,7 @@ import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
@@ -24,6 +25,8 @@ public class fun implements ActionListener{
 	private String joke = "";
 	private JTextField myjoketext;
 	private JButton button;
+	private JPanel background, frontpanel;
+	Color color1,color2,color3;
 	
 	
 	fun(){
@@ -32,6 +35,12 @@ public class fun implements ActionListener{
 		frame.setBounds(650, 150, 600, 250);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
+		background = new JPanel();
+		frontpanel = new JPanel();
+		
+		color1 = Color.decode("#7CCBC4");
+		color2 = Color.decode("#A5DAD5");
+		color3 = Color.decode("#1D63C6");
 		
 		try {
 			scnr = new Scanner(file);
@@ -69,20 +78,28 @@ public class fun implements ActionListener{
 		myjoketext.setBounds(0, 0, 1000, 50);
 		myjoketext.setLayout(null);
 		myjoketext.setText(joke);
+		myjoketext.setBackground(color2);
+		
+		background.setBackground(color1);
+		background.setBounds(0, 0, 600, 250);
+		frontpanel.setBackground(color2);
+		frontpanel.setBounds(50, 75, 475, 100);
 		
 		
 		
 		button = new JButton("New Joke");
-		button.setBounds(100, 100, 100, 50);
+		button.setBounds(200, 100, 150, 50);
 		button.setLayout(null);
 		button.addActionListener(this);
-		
+		button.setBackground(color1);
 		
 		
 		
 		
 		frame.add(button);
 		frame.add(myjoketext);
+		frame.add(frontpanel);
+		frame.add(background);
 		frame.setVisible(true);
 		
 		

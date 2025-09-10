@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.*;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 public class Calculator implements ActionListener{
 
@@ -24,6 +25,7 @@ public class Calculator implements ActionListener{
 	double result=0.0;
 	String operation = "";
 	boolean funbut;
+	Color color1,color2,color3;
 	
 	
 	public Calculator() {
@@ -33,6 +35,10 @@ public class Calculator implements ActionListener{
 		window.setResizable(false);
 		window.setLayout(null);
 		window.setLayout(null);
+		
+		color1 = Color.decode("#7CCBC4");
+		color2 = Color.decode("#A5DAD5");
+		color3 = Color.decode("#1D63C6");
 		
 		panel = new JPanel();
 		panel.setBounds(0, 100,405,415);
@@ -72,6 +78,7 @@ public class Calculator implements ActionListener{
 		for(int i=0;i<allButtons.length;i++) {
 			allButtons[i].addActionListener(this);
 			panel.add(allButtons[i]);
+			allButtons[i].setBackground(Color.white);
 		}
 
 		window.add(textf);
